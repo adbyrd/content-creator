@@ -1,0 +1,156 @@
+content-creator
+├── README.md
+├── LICENSE
+├── CODEOWNERS
+├── SECURITY.md
+├── CONTRIBUTING.md
+├── CHANGELOG.md
+├── .gitignore
+├── .env.example
+├── .editorconfig
+├── .github
+│   ├── workflows
+│   │   ├── ci.yml
+│   │   ├── release.yml
+│   │   └── dependency-audit.yml
+│   ├── pull_request_template.md
+│   └── ISSUE_TEMPLATE
+│       ├── bug_report.md
+│       ├── change_request.md
+│       └── security_issue.md
+├── docs
+│   ├── 00_executive-summary
+│   │   └── 00_executive-summary.pdf
+│   ├── 01_user-journey
+│   │   └── 01_user.journey.pdf
+│   ├── 02_avatar
+│   │   ├── 02_avatar__sarah.jenkins.pdf
+│   │   └── 03_4-layers__sarah.jenkins.pdf
+│   ├── 03_product-copy
+│   │   ├── 04_tcc_skool_about.pdf
+│   │   ├── 05_landing.pg.copy.pdf
+│   │   ├── 06_introduction-video.pdf
+│   │   └── group.bio.md
+│   ├── 04_system-architecture
+│   │   ├── 07_automated-content-delivery-system.pdf
+│   │   ├── 08_engineering-runbook.pdf
+│   │   ├── architecture.md
+│   │   └── glossary.md
+│   └── 05_operations
+│       ├── SLOs.md
+│       ├── release-process.md
+│       └── incident-playbooks
+│           ├── delivery-missed.md
+│           ├── hubspot-rate-limit.md
+│           ├── vendor-outage.md
+│           └── postmark-bounce-spike.md
+├── contracts
+│   ├── hubspot
+│   │   ├── properties
+│   │   │   ├── README.md
+│   │   │   ├── cc_contact_properties.v1.yaml
+│   │   │   └── cc_contact_properties.v2.yaml
+│   │   ├── enums
+│   │   │   ├── cc_lifecycle_state.yaml
+│   │   │   ├── cc_delivery_status.yaml
+│   │   │   └── cc_onboarding_state.yaml
+│   │   └── mappings
+│   │       ├── wix_form_to_hubspot.yaml
+│   │       └── skool_to_hubspot.yaml
+│   ├── n8n
+│   │   ├── workflow-contract.md
+│   │   └── error-taxonomy.yaml
+│   ├── email
+│   │   ├── message-contract.md
+│   │   └── templates
+│   │       ├── daily-delivery.md
+│   │       ├── onboarding.md
+│   │       └── paused-silent.md
+│   └── vendors
+│       ├── openai.md
+│       ├── elevenlabs.md
+│       ├── creatomate.md
+│       └── nano-banana.md
+├── workflows
+│   └── n8n
+│       ├── README.md
+│       ├── export
+│       │   ├── cc_delivery_spine.v1.json
+│       │   ├── cc_lead_ingest_wix.v1.json
+│       │   └── cc_skool_member_sync.v1.json
+│       └── fixtures
+│           ├── sample_inputs
+│           │   ├── wix_lead_captured.json
+│           │   └── prompt_profile_minimal.json
+│           └── sample_outputs
+│               ├── generated_script.json
+│               └── postmark_payload.json
+├── services
+│   ├── ingest
+│   │   ├── wix
+│   │   │   ├── normalize.js
+│   │   │   ├── schema.json
+│   │   │   └── tests
+│   │   │       └── normalize.test.js
+│   │   └── skool
+│   │       └── README.md
+│   ├── orchestration
+│   │   └── n8n
+│   │       ├── conventions.md
+│   │       └── nodes
+│   │           ├── hubspot.ts
+│   │           ├── postmark.ts
+│   │           └── logging.ts
+│   ├── generation
+│   │   ├── prompts
+│   │   │   ├── system_prompt.md
+│   │   │   ├── short_script_prompt.md
+│   │   │   └── style_guides
+│   │   │       ├── evan-porter.md
+│   │   │       └── sarah-voice.md
+│   │   └── validators
+│   │       └── content_guardrails.json
+│   └── delivery
+│       └── email
+│           └── postmark
+│               ├── payload-builder.ts
+│               ├── templates
+│               │   ├── daily.html
+│               │   └── daily.txt
+│               └── tests
+│                   └── payload-builder.test.ts
+├── config
+│   ├── environments
+│   │   ├── dev
+│   │   │   ├── hubspot.env.example
+│   │   │   ├── postmark.env.example
+│   │   │   └── n8n.env.example
+│   │   └── prod
+│   │       ├── hubspot.env.example
+│   │       ├── postmark.env.example
+│   │       └── n8n.env.example
+│   ├── feature-flags.yaml
+│   └── rate-limits.yaml
+├── tooling
+│   ├── scripts
+│   │   ├── export-n8n.sh
+│   │   ├── validate-workflows.sh
+│   │   └── generate-contract-docs.py
+│   └── schemas
+│       ├── wix_lead.schema.json
+│       ├── postmark_message.schema.json
+│       └── prompt_payload.schema.json
+├── examples
+│   ├── postman
+│   │   ├── collection.json
+│   │   └── environments
+│   │       ├── dev.json.example
+│   │       └── prod.json.example
+│   └── payloads
+│       ├── wix_lead_submission.example.json
+│       └── hubspot_contact_patch.example.json
+└── tests
+    └── integration
+        ├── hubspot.mock.spec.ts
+        ├── postmark.mock.spec.ts
+        └── n8n.snapshot.spec.ts
