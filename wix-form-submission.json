@@ -1,0 +1,30 @@
+{
+  "event": "wix.form.submission",
+  "environment": "dev",
+  "schema_version": "v2",
+  "source": "wix_muse_landing",
+  "page_path": "/muse",
+  "form_id": "new_lead_content_creator",
+  "submitted_at": "2026-01-21T16:00:00Z",
+  "consent": {
+    "email_marketing": true,
+    "captured_at": "2026-01-21T16:00:00Z",
+    "method": "checkbox"
+  },
+  "contact": {
+    "email": "iamelwood@gmail.com"
+  },
+  "cc_state": {
+    "state_lifecycle": "lead_captured",
+    "state_onboarding": "not_started",
+    "delivery_status": "onboarding"
+  },
+  "idempotency": {
+    "key_material": "wix_muse_landing|/muse|iamelwood@gmail.com|2026-01-21",
+    "strategy": "sha256(key_material)"
+  },
+  "client_context": {
+    "user_agent": "Mozilla/5.0",
+    "ip": "0.0.0.0"
+  }
+}
